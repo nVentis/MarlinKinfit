@@ -111,7 +111,10 @@ class ParticleConstraint: public BaseHardConstraint {
     virtual void resetFOList(){
       fitobjects.resize (0);
       flags.resize (0);
-    }; 
+    };
+
+    // Returns the four momentum of the fitobjects system in order (E,Px,Py,Pz)
+    virtual double* getFourMomentum(int flag);
 
     /// Invalidates any cached values for the next event
     virtual void invalidateCache() const 

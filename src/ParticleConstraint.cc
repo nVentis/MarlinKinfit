@@ -26,6 +26,25 @@
 #include <cmath>
 using namespace std;
 
+// Returns the four momentum of the fitobjects system in order (E,Px,Py,Pz)
+double* ParticleConstraint::getFourMomentum(int flag) {
+    double result[4];
+
+    for (unsigned int i = 0; i < fitobjects.size(); i++) {
+      if (flags[i] == flag) {
+        const ParticleFitObject *fok = dynamic_cast < ParticleFitObject* > ( fitobjects[i] );
+        assert(fok);
+
+        result[0] += fok->getE(); 
+        result[1] += fok->getPx(); 
+        result[2] += fok->getPy(); 
+        result[3] += fok->getPz();
+      }
+    }
+    
+    return result;
+  }
+
 
 // probably these can also be moved to basehardconstraint?
 
