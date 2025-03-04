@@ -114,7 +114,7 @@ class ParticleConstraint: public BaseHardConstraint {
     };
 
     // Returns the four momentum of the fitobjects system in order (E,Px,Py,Pz). make sure to call delete[] on the result
-    virtual double* getFourMomentum(int flag);
+    virtual void getFourMomentum(int flag, double (&fourList) [4]);
 
     /// Invalidates any cached values for the next event
     virtual void invalidateCache() const 

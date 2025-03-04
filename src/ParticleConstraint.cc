@@ -27,9 +27,7 @@
 using namespace std;
 
 // Returns the four momentum of the fitobjects system in order (E,Px,Py,Pz)
-double* ParticleConstraint::getFourMomentum(int flag) {
-    double* result = new double[4]{0};
-
+void ParticleConstraint::getFourMomentum(int flag, double (&result) [4]) {
     for (unsigned int i = 0; i < fitobjects.size(); i++) {
       if (flags[i] == flag) {
         const ParticleFitObject *fok = dynamic_cast < ParticleFitObject* > ( fitobjects[i] );
@@ -45,8 +43,6 @@ double* ParticleConstraint::getFourMomentum(int flag) {
     }
 
     //cerr << "RESULT (E,Px,Py,Pz)=(" << result[0] << "," << result[1] << "," << result[2] << "," << result[3] << ")" << endl;
-    
-    return result;
   }
 
 
