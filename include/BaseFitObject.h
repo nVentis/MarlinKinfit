@@ -97,7 +97,7 @@
  *
  * 
  *
- * Author:  Benno List, Jenny Böhme
+ * Author:  Benno List, Jenny Bï¿½hme
  * $Date: 2011/03/03 15:03:02 $
  * $Author: blist $
  *
@@ -186,7 +186,7 @@ class BaseFitObject {
                             ) const;
     /// Get name of parameter ilocal
     virtual const char *getParamName (int ilocal     ///< Local parameter number
-                            ) const { return "???";}
+                            ) const { (void) ilocal; return "???";}
     /// Get object's name
     //    virtual const char *getName () const { return name ? name : "???";}
     virtual const char *getName () const; // { return name ? name : "???";}
